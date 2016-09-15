@@ -2,9 +2,25 @@ package stellaria.server;
 
 public class StellariaServer {
 
+	public static boolean verbose = false;
+	
+	
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		new StellariaServer().start(args);
 
+	}
+	
+	public void start(String[] arg){
+		for(int i=0;i<arg.length;i++){
+			switch(arg[i]){
+			  case "-v":
+				verbose=true;  
+				Messenger.print(Messenger.NOTIFICATION, "Starting in verbose mode.");
+				break;
+			  default:
+				break;
+			}
+		}
 	}
 
 }
