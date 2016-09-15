@@ -7,6 +7,10 @@ public class Star {
 	public Gate[] gates;
 	
 	
+	
+	public FloatCoord pos;
+	
+	
 	public int type;
 		public static final int STAR_YELLOWDWARF = 0;
 		public static final int STAR_REDDWARF = 1;
@@ -19,6 +23,10 @@ public class Star {
 		public static final int STAR_BINARY = 8;
 	
 	
+		
+		public void generate(){
+			
+		}
 	
 	
 }
