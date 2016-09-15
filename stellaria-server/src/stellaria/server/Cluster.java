@@ -4,7 +4,7 @@ import java.util.Random;
 
 public class Cluster {
 
-	public final float maxDistance = 0.2f;
+	public final float maxDistance = 0.1f;
 	
 	public Star[] stars;
 	
@@ -14,28 +14,12 @@ public class Cluster {
 	public void generate(int size){
 		Random rand = new Random();
 		//generate the clusters stars
-		stars[size] = new Star();
+		stars = new Star[size];
 		for(int i = 0;i<size;i++){
+			stars[i] = new Star();
 			stars[i].generate();
-			stars[i].pos = new FloatCoord((1.0f - -1.0f) * rand.nextFloat() + -1.0f,(1.0f - -1.0f) * rand.nextFloat() + -1.0f);
-				for(int p = 0;p<size;p++){
-					if(p==i){
-						continue;
-					}
-					if(stars[p].pos == null){
-						continue;
-					}
-					
-					
-					
-					if(Math.sqrt(
-						Math.pow((stars[p].pos.x-stars[i].pos.x),2)
-						+
-						Math.pow((stars[p].pos.y-stars[i].pos.y),2))
-					<maxDistance){
-						i--;
-						continue;
-					}
+			stars[i].pos = new FloatCoord((float) Math.random(),(float) Math.random());
+
 				}
 			
 		}
@@ -45,4 +29,4 @@ public class Cluster {
 		
 		
 	}
-}
+

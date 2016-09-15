@@ -6,6 +6,8 @@ public class Star {
 	
 	public Gate[] gates;
 	
+	public String name = "null";
+	
 	
 	
 	public FloatCoord pos;
@@ -25,8 +27,27 @@ public class Star {
 	
 		
 		public void generate(){
+			type = (int) Math.round(Math.random()*8);
+			
+			
+			name = "";
+			String[] initials = {"k","g","d","t","s","h","r","j","sh","th"};
+			String[] medials = {"a","u","i","o"};
+			String[] finals = {"","n","m","f","z","s","sh"};
+			int syllables = 3;
+			
+			for(int i = 0;i<syllables;i++){
+				name = name + initials[(int) Math.round(Math.random()*(initials.length-1))];
+				name = name + medials[(int) Math.round(Math.random()*(medials.length-1))];
+				name = name + finals[(int) Math.round(Math.random()*(finals.length-1))];
+			}
+			name=capitalize(name);
+			
 			
 		}
+		private String capitalize(final String line) {
+			   return Character.toUpperCase(line.charAt(0)) + line.substring(1);
+			}
 	
 	
 }
