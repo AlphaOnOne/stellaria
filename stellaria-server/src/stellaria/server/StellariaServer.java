@@ -11,6 +11,7 @@ public class StellariaServer {
 	}
 	
 	public void start(String[] arg){
+		
 		for(int i=0;i<arg.length;i++){
 			switch(arg[i]){
 			  case "-v":
@@ -20,6 +21,13 @@ public class StellariaServer {
 			  default:
 				break;
 			}
+			
+			Visualizer vis = new Visualizer();
+			Cluster clus = new Cluster();
+			clus.generate(15);
+			vis.visualize(clus);
+			
+			
 		}
 	}
 
