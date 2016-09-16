@@ -4,7 +4,7 @@ import java.util.Random;
 
 public class Cluster {
 
-	public final float maxDistance = 0.2f;
+	public final float minDistance = 0.2f;
 	
 	public Star[] stars;
 	
@@ -27,12 +27,15 @@ public class Cluster {
 					}
 					
 					
-					
+					//Please excuse this bullshit line
+					//its the distance formula, so dont
+					//touch it, it ain't gonna change
+					//DEAR ORACLE: IMPLEMENT ^ FOR FLOATS
 					if(Math.sqrt(
 						Math.pow((stars[p].pos.x-stars[i].pos.x),2)
 						+
 						Math.pow((stars[p].pos.y-stars[i].pos.y),2))
-					<maxDistance){
+					<minDistance){
 						i--;
 						continue;
 					}
